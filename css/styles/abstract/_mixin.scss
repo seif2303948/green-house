@@ -1,0 +1,66 @@
+
+@mixin position($p: absolute , $t:initial ,$b:initial ,$l:initial ,$r:initial , $y:0% , $x : 0%){
+    position: $p;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+    transform: translate($x,$y);
+}
+@mixin distans($w:initial , $h:initial){
+    width: $w;
+    height: $h;
+}
+@mixin flex-center($jc:center,$al:center){
+    display: flex;
+    justify-content: $jc;
+    align-items: $al;
+}
+@mixin respond($breakpoint){
+    @if($breakpoint == 350){
+        @media (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakpoint == 450){
+        @media (min-width: 371px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakpoint == 650){
+        @media (min-width: 577px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakpoint == 850){
+        @media (min-width: 769px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakpoint == 1050){
+        @media (min-width: 993px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakpoint == 1250){
+        @media (min-width: 1181px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

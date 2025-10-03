@@ -1,0 +1,14 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+.modal{
+    .modal-dialog{
+        max-width: 1300px;
+        @include respond(350){
+            margin: 0px 30px ;
+        }
+        .modal-content{
+            width: 100%;
+        }    
+    }
+}        

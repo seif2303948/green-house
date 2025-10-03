@@ -1,0 +1,140 @@
+@use "../abstract/keyframes" as *;
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+
+
+header{
+    position: relative;
+    @include distans(initial, 100vh);
+    @include flex-center();
+    .container-1{
+        @include distans(65%, initial);
+        @include flex-center();
+        @include respond(350){
+            display: block;
+            width: 100%;
+        }
+        @include respond(1050){
+            @include flex-center();
+            @include distans(75%, initial);
+        }
+        .text{
+            width: 50%;
+            @include respond(350){
+                width: 100%;
+            }
+            @include respond(1050){
+            @include distans(50%, initial);
+            }
+            h1{
+                color: $firstColor;
+                font-size: 70px;
+                @include respond(350){
+                    font-size: 50px;
+                }
+            }
+            p{
+                color: #ADA996;
+            }
+            .cd-words-wrapper{
+                padding: 0;
+                b{
+                    color: $secondColor;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                &::after{
+                    background-color: $secondColor;
+                    height: 80%;
+                    width: 3px;
+                    top: 80%;
+                    transform: translateY(-50%);
+                    border-radius: 10px;
+                }
+            }
+            .container{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .div-i{
+                    width: 45px;
+                    height: 45px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .background{
+                        border-radius: 100%;
+                        width: 30px;
+                        height: 30px;
+                        transition-duration: 0.5s;
+                        i{
+                            @include position($t:50% , $l:50% , $x:-50% , $y:-50%);
+                            transition-duration: 0.5s;
+                        }
+                        &:hover{
+                            i{
+                                color: #fff;
+                            }
+                        }
+    
+                    }
+                    &:hover{
+                        .background{
+                            background-color: $firstColor;
+                            @include distans(100%,100%);
+                        }
+                    }
+                }
+            }
+        }
+        .global-ball{
+            @include flex-center($jc:flex-end);
+            @include respond(350){
+                width: 100%;
+                display: block;
+                margin: auto;
+            }
+            @include respond(1050){
+                width: 50%;
+            }
+            img{
+                width: 75%;
+                @include respond(350){
+                    width: 410;
+                    max-width: 410px;
+                    display: block;
+                    margin: auto;
+                }
+                @include respond(450){
+                    
+                }
+            }
+        }
+    }
+    svg{
+        @include position($b:0,$l:0);
+    }
+    .arrows{
+        @include distans(20px,50px);
+        @include position($b:150px , $l:50% ,$x:-50%,$y:-50%);
+        cursor: pointer;
+        .arrow{
+            @include position($t:0%, $l:50%,$x:-50%,$y:-50%);
+            z-index: 10;
+        }
+        .arrow.start{
+            animation: arrow-start 2s ;
+            animation-iteration-count: infinite;
+        }
+        .arrow.middle{
+            animation: arrow-middle 2s ;
+            animation-iteration-count: infinite;
+        }
+        .arrow.end{
+            animation: arrow-end 2s ;
+            animation-iteration-count: infinite;
+        }
+    }
+}

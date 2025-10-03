@@ -1,0 +1,62 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+nav.navbar{
+    background-color: transparent;
+    @include distans(100%);
+    @include position( $p:fixed, $t:0 , $l:0 );
+    z-index: 999;
+    .navbar-brand{
+        img{
+            transition-duration: 0.5s
+        }
+    }
+    .container-fluid{
+        @include distans(75%);
+
+        .div-logo{
+            width: 150px;
+        }
+
+        .nav-item{
+            margin: 0px 5px;
+            position: relative;
+
+            .nav-link{
+                color: $firstColor;
+                font-weight: 700;
+                &::before{
+                content: "";
+                display: block;
+                @include position( $b:0% , $l:50% , $x:-50%);
+                @include distans(0% , 2px);
+                background-color: $secondColor;
+                transition-duration: 0.5s;
+            }
+            &:hover{
+                &::before{
+                    @include distans(75% , 2px);
+                }
+            }
+            &.active{
+                &::before{
+                    @include distans(75% , 2px);
+                }
+            }
+            }
+        }  
+    }
+    
+    
+}
+
+
+nav.navbar.light{
+    background-color: #fff;
+    opacity: 0.8;
+    .navbar-brand{
+        img{
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+#AboutUs{
+    background-color: #fff;
+    .container-fluid{
+        @include distans(80%,100%);
+        display: flex;
+        gap: 15px;
+        margin-top:40px;
+        @include respond(350){
+            display: block;
+            @include distans(100%,100%);
+        }
+        @include respond(1050){
+            @include distans(80%,100%);
+            display: flex;
+            gap: 15px;
+            margin-top:40px;
+        }
+        .div-img{
+            width: 50%;
+            border-radius: 10px;
+            overflow: hidden;
+            @include respond(350){
+                @include distans(100%,100%);;
+                max-width: 400px;
+                margin: auto;
+            }
+            @include respond(1050){
+                @include distans(50%,100%);
+                max-width: 400px;
+                margin: 0;
+            }
+        }
+        .text{
+            width: 70%;
+            p{
+                letter-spacing: 2px;
+            }
+            @include respond(350){
+                @include distans(100%,100%);
+            }
+            @include respond(1050){
+                @include distans(70%,100%);
+            }
+        }
+    }
+}

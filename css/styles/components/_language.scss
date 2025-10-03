@@ -1,0 +1,165 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+#Language{
+    position: relative;
+    height: 200px;
+    background-image: url("../img/video-bg-abaab2f2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .title-white{
+        i{
+            font-size: 60px;
+            margin-top: 15px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+        h1 span{
+            @include respond(350){
+                font-size: 35px;
+            }
+            @include respond(1050){
+                font-size: 45px;
+            }
+        }
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(#68b703, #305d00);
+        @include position($t:0,$l:0);
+        opacity: 0.8;
+    }
+    .btns{
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        button{
+            padding: 10px 20px;
+            border: none;
+            color: $secondColor;
+            border-radius: 10px;
+            transition-duration: 0.5s;
+            &:hover{
+                transform: translateY(-10px);
+            }
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+
+    
+    .offcanvas-body{
+        .container.firstColor{
+            padding: 20px;
+            h1{
+                color: $firstColor;
+                &::after{
+                    content: "";
+                    display: block;
+                    margin-right: auto;
+                    width: 25%;
+                    height: 4px;
+                    background-color: $firstColor;
+                    border-radius: 10px;
+                    transition-duration: 0.5s;
+                }
+            }
+            ul{
+                padding: 0%;
+                li{
+                    color: #000;
+                    &::marker{
+                        color: $firstColor;
+                    }
+                    font-weight: 500;
+                    i{
+                        color:$firstColor;
+                        margin-right: 10px;
+                    }
+                }   
+            }
+        }
+        .container.secondColor{
+            padding: 20px;
+            h1{
+                color: $secondColor;
+                &::after{
+                    content: "";
+                    display: block;
+                    margin-right: auto;
+                    width: 25%;
+                    height: 4px;
+                    background-color: $secondColor;
+                    border-radius: 10px;
+                    transition-duration: 0.5s;
+                }
+            }
+            ul{
+                padding: 0%;
+                li{
+                    color: #000;
+                    &::marker{
+                        color: $secondColor;
+                    }
+                    font-weight: 500;
+                    i{
+                        color:$secondColor;
+                        margin-right: 10px;
+                    }
+                }   
+            }
+        }
+    }
+    .modal-content.sector{
+        .modal-header{
+            h5{
+                margin-left: auto;
+            }
+        }
+        .modal-body{
+            .row{
+                .col{
+                    width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #ebfbee;
+                    padding: 10px 0px ;
+                    border-radius: 10px;
+                    .div-img{
+                        width: 40%;
+                        padding: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: auto;
+                    }
+                    .text{
+                        width: 80%;
+                        border-radius: 5px;
+                        background-color: #dfeee2;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: auto;
+                        margin-top: 10px;
+                        p{
+                            margin: 0;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
