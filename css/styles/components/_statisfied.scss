@@ -1,0 +1,38 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+#SATISFIEDCLIENTS{
+    .owl-stage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .owl-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: initial;
+            .item{
+                width: 350px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .owl-prev{
+        display: none;
+    }
+    .owl-carousel .owl-nav button.owl-next{
+        display: none;
+    }
+    .owl-theme .owl-dots .owl-dot {
+        span{
+            background-color: #ee5f008a;
+        }
+        &:hover span{
+            background-color: $secondColor;
+        }
+
+    }
+}

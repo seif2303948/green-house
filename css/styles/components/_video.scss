@@ -1,0 +1,48 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+#video{
+    height: 200px;
+    background-image: url("../img/video-bg-abaab2f2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .title-white{
+        i{
+            font-size: 60px;
+            margin-top: 15px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(#68b703, #305d00);
+        @include position($t:0,$l:0);
+        opacity: 0.8;
+    }
+    .modal{
+        .modal-dialog{
+            max-width: 900px;
+            margin-top: 80px;
+            height: 500px;
+            @include respond(350){
+                margin: 0px 30px ;
+            }
+            .modal-content{
+                width: 100%;
+                height: 100%;
+                .modal-body{
+                    iframe{
+                        @include distans(100%,100%);
+                    }
+                }
+            }    
+        }
+    }  
+}

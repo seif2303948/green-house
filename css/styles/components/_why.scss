@@ -1,0 +1,57 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+#WhyUs{
+    .container-fluid{
+        margin-top: 30px;
+        .row{
+            gap: 100px;
+            .cards{
+                width: 350px;
+                max-width: 350px;
+                padding: 0;
+                border-radius: 10px;
+                background-color: $secondColor;
+                .item{
+                    position: relative;
+                    border-radius: 10px;
+                    height: 100%;
+                    transition-duration: 0.5s;
+                    img{
+                        border-radius: 10px;
+                    }
+                    .text{
+                        @include position($t:50%,$l:50%,$x:-50%,$y:-50%);
+                        @include distans(90%,100%);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+                        z-index: 1;
+                        cursor: pointer;
+                        h1{
+                            color: #fff;
+                            font-weight: 700;
+                        }
+                        p{
+                            color: #fff;
+                            margin-bottom: 20px
+                        }
+                    }
+                    &::after{
+                        content: "";
+                        @include position($t:0,$l:0);
+                        @include distans(100%,100%);
+                        background: linear-gradient(0deg, rgb(30, 32, 34) 0%, transparent 75%);
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                }
+                &:hover{
+                    .item{
+                        transform: translate(-2%,2%);
+                    }
+                }
+            }
+        }
+    }
+}

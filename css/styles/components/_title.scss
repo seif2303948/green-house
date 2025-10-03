@@ -1,0 +1,69 @@
+@use "../abstract/mixin" as *;
+@use "../abstract/variables" as *;
+
+section{
+    .title{
+        text-align: center;
+        h1{
+            color: $secondColor;
+            font-weight: bolder;
+            span{
+                display: inline-block;
+                font-size: 45px;
+                &::after{
+                    content: "";
+                    display: block;
+                    margin: auto;
+                    width: 25%;
+                    height: 4px;
+                    background-color: $secondColor;
+                    border-radius: 10px;
+                    transition-duration: 0.5s;
+                }
+            }
+        }
+    }
+    &:hover{
+        h1{
+            span{
+                &::after{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+
+section{
+    .title-white{
+        text-align: center;
+        h1{
+            color: #fff;
+            font-weight: bolder;
+            span{
+                display: inline-block;
+                font-size: 45px;
+                &::after{
+                    content: "";
+                    display: block;
+                    margin: auto;
+                    width: 25%;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    transition-duration: 0.5s;
+                }
+            }
+        }
+    }
+    &:hover{
+        h1{
+            span{
+                &::after{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
